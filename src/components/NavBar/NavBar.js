@@ -10,7 +10,7 @@ const NavBar = () => {
     return (
         <nav className="nav fixed-top">
             <div classname="container col-sm-2">
-                <a classname="navbar-brand" href="javascript:void(0);">
+                <a classname="navbar-brand" href="#/">
                     <img src={logo} alt="" width="50" height="50"></img>
                 </a>
             </div>
@@ -22,13 +22,13 @@ const NavBar = () => {
                             Categories
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item"  href="javascript:void(0);"> <FontAwesomeIcon icon={faStar}/> Top Sales</a></li>
-                            <li><a className="dropdown-item" href="javascript:void(0);"> <FontAwesomeIcon icon={faMobileAlt}/> Smart Phones</a></li>
-                            <li><a className="dropdown-item" href="javascript:void(0);"> <FontAwesomeIcon icon={faFireAlt}/> Hot Sales</a></li>
+                            <li><a className="dropdown-item"  href="#/"> <FontAwesomeIcon icon={faStar}/> Top Sales</a></li>
+                            <li><a className="dropdown-item" href="#/"> <FontAwesomeIcon icon={faMobileAlt}/> Smart Phones</a></li>
+                            <li><a className="dropdown-item" href="#/"> <FontAwesomeIcon icon={faFireAlt}/> Hot Sales</a></li>
                         </ul>
                     </li>
                 </ul>
-                <a className="nav-link" href="javascript:void(0);">About Us</a>
+                <a className="nav-link" href="#/">About Us</a>
             </div>
             <CartWidget/>
         </nav>
