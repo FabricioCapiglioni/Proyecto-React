@@ -31,12 +31,11 @@
     align-items: center;
 }
 
-.userIcon {
-    margin-right: 5rem;
-}
 
-.userIcon, .cartIcon {
+
+.userIcon, .cartCount {
     cursor: pointer;
+    margin-right: 5rem;
 }
 
 .cartCount {
