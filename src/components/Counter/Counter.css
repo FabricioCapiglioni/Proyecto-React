@@ -1,0 +1,32 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card{
+    width: 18rem;
+    justify-content: center;
+}
+
+.imgContainer {
+    width: 100%;
+}
+
+.card-img-top {
+
+    width: 200px;
+}
+
+.cantContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantIcon {
+    color: rgb(7, 120, 233);
+    font-size: 30px;
+    margin: 1rem 2rem;
+    cursor: pointer;
+}

@@ -9,16 +9,16 @@ import CartWidget from '../CartWidget/CartWidget';
 const NavBar = () => {
     return (
         <nav className="nav fixed-top">
-            <div classname="container col-sm-2">
-                <a classname="navbar-brand" href="#/">
+            <div className="container col-sm-2">
+                <a className="navbar-brand" href="#/">
                     <img src={logo} alt="" width="50" height="50"></img>
                 </a>
             </div>
             <div className="navLinks col-sm-8">
-                <a className="nav-link active" aria-current="page" href="javascript:void(0);">Home</a>
+                <a className="nav-link active" aria-current="page" href="dangerouslySetInnerHTML">Home</a>
                 <ul className="nav-link"> 
                     <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a className="nav-link dropdown-toggle" href="dangerouslySetInnerHTML" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categories
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
