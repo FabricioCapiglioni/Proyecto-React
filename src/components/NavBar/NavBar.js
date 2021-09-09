@@ -12,6 +12,7 @@ const NavBar = () => {
             <div className="container col-sm-2">
                 <a className="navbar-brand" href="#/">
                     <img src={logo} alt="" width="50" height="50"></img>
+                    <h1>CoderPhone</h1>
                 </a>
             </div>
             <div className="navLinks col-sm-8">

@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import NavBar from './components/NavBar/NavBar';
 import Carousel from './components/Carousel/Carousel.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Counter from './components/Counter/Counter';
+//import Counter from './components/Counter/Counter';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <body>
         <main>
           <ItemListContainer/>
-          <Counter stok="5" initial="1"/>
+         {/*  <Counter stok="5" initial="1"/> */}
         </main>
       </body>
     </div>
