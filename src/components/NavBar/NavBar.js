@@ -6,7 +6,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartWidget from '../CartWidget/CartWidget';
 
-const NavBar = () => {
+const NavBar = ({count}) => {
     return (
         <nav className="nav fixed-top">
             <div className="container col-sm-2">
@@ -31,7 +31,7 @@ const NavBar = () => {
                 </ul>
                 <a className="nav-link" href="#/">About Us</a>
             </div>
-            <CartWidget/>
+            <CartWidget count={count}/>
         </nav>
     )
 }

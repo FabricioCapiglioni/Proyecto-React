@@ -1,0 +1,47 @@
+.itemDetail{
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 15px -4px rgba(233, 7, 7, 0.424);
+}
+.brandDetail{
+    font-style: italic;
+    font-weight: 600;
+}
+
+
+.priceDetail{
+    font-size: 1.8rem;
+    color: red;
+    font-weight: 700;
+}
+
+.descriptionDetail {
+    font-size: 1.4rem;
+}
+
+.cantContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantIcon {
+    color: #3483fa;
+    font-size: 30px;
+    margin: 1rem 2rem;
+    cursor: pointer;
+}
+
+.buttons{
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #3483fa;
+    border-color: #3483fa;;
+}

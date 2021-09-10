@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color:rgb(7, 120, 233);
+    background-color:#3483fa;
 }
 
 .navbar-brand {
@@ -58,7 +58,7 @@
 }
 
 .dropdown-menu {
-    background-color:rgb(7, 120, 233);
+    background-color:#3483fa;
 }
 
 .dropdown-item {

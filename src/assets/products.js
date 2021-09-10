@@ -9,9 +9,17 @@ const products = [{
     brand: "Apple",
     name: "iPhone 12 Pro Max",
     description: "Smartphone Apple iPhone 12 Pro Max 256 GB",
-    stock: 500,
+    stock: 10,
     price: 1200,
-    pictureUrl: iphone12
+    pictureUrl: iphone12,
+    techSpecs: {
+        ram: "6 GB",
+        capacity: "256 GB",
+        display: "Super Retina XDR display 6.7‑inch (diagonal) all‑screen OLED display 2778‑by‑1284-pixel resolution at 458 ppi",
+        chip: "A14 Bionic chip",
+        camera: "Front 12 MP / Rear 12 + 12 + 12 MP",
+        batery: "3.687 mAh"
+    }
 },
 {
     id: "02",
