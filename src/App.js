@@ -24,6 +24,10 @@ function App() {
          {/*  <Counter stok="5" initial="1"/> */}
          <ItemDetailContainer count={count} setCount={setCount} />
         </main>
+{/*         <section>
+
+        </section> */}
+
       </body>
     </div>
   );

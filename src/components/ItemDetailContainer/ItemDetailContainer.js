@@ -4,7 +4,7 @@ import products from '../../assets/products.js';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 
-function getList() {
+function getProduct() {
 
 return new Promise((resolve, reject) => {
     setTimeout(() => resolve(products[0]), 2000)
@@ -16,7 +16,7 @@ const ItemDetailContainer = ({count, setCount}) => {
     const [phoneDetail, setPhoneDetail] = useState([])
 
     useEffect(() => {
-        const list = getList()
+        const list = getProduct()
 
         list.then(list => {
             setPhoneDetail(list)
