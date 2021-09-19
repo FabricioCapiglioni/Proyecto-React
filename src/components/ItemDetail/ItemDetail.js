@@ -3,8 +3,16 @@ import ItemTechSpecs from './ItemTechSpecs/ItemTechSpecs';
 import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loading from '../Loading/Loading';
 
 const ItemDetail = ({ item, count, setCount }) => {
+    
+
+    if (!item){
+        return (
+            <Loading/>
+        )
+    }
 
     const subtFunction = () => {
         if (count > 0) {

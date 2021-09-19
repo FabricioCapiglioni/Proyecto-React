@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import './ItemListContainer.css'
 import products from '../../assets/products.js'
 import ItemList from '../ItemList/ItemList'
+import Loading from '../Loading/Loading';
 
 
 function getList() {
@@ -20,16 +21,21 @@ const ItemListContainer = () => {
 
         list.then(list => {
             setListPhones(list)
-            console.log(list)
         }, err => {
             console.log(err);
         })
     }, [])
 
+    if (listPhones.length === 0 ) {
+        return (
+           <Loading /> 
+        )
+    }
+
 
     return ( 
         <section className="container-fluid">
-            <div className="">
+            <div>
                 <h1 className="title">Our Products</h1>
                 
             </div>
