@@ -2,9 +2,6 @@ import './NavBar.css'
 import logo from '../../assets/img/logo.png'
 import CartWidget from '../CartWidget/CartWidget';
 import { NavLink, Link } from 'react-router-dom';
-import products from '../../assets/products'
-
-
 
 
 const NavBar = ({count}) => {
@@ -24,11 +21,10 @@ const NavBar = ({count}) => {
                     <a className="nav-link dropdown-toggle" href="dangerouslySetInnerHTML" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Brands
                         </a>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {                          
-                            products.map(prod => 
-                                <NavLink to={`/category/${prod.brand}`} key={prod.id} className="dropdown-item" ><li>{prod.category}</li></NavLink>
-                            )}
+                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">                            
+                            <NavLink to={`/category/apple`} key="01" className="dropdown-item" ><li>Apple</li></NavLink>
+                            <NavLink to={`/category/samsung`} key="02" className="dropdown-item" ><li>Samsung</li></NavLink>
+                            <NavLink to={`/category/xiaomi`} key="03" className="dropdown-item" ><li>Xiaomi</li></NavLink>                            
                         </ul>
                     </li>
                 </ul>
