@@ -3,6 +3,7 @@
     width: 100%;
     color: white;
     height: 8vh;
+    min-height: 4.6rem;
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;

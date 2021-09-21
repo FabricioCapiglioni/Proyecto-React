@@ -8,6 +8,7 @@ import Carousel from './components/Carousel/Carousel.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import AboutUs from './components/AboutUs/AboutUs.js';
+import Contact from './components/Contact/Contact.js';
 
 
 function App() {
@@ -24,9 +25,12 @@ function App() {
         </header>
         <div>
           <Switch> 
-            <main>
+            
               <Route exact path='/about'>
                 <AboutUs />
+              </Route>
+              <Route exact path='/contact'>
+                <Contact />
               </Route>
               <Route exact path="/"> 
                 <ItemListContainer/>
@@ -37,7 +41,7 @@ function App() {
               <Route exact path="/item/:id"> 
                 <ItemDetailContainer count={count} setCount={setCount} />
               </Route>
-            </main>
+            
           </Switch>
         </div>
       </div>
