@@ -19,27 +19,8 @@
 }
 
 .quantityContainer {
-
     justify-content: center;
-}
-.link {
-    font-size: 1.4rem;
-    text-decoration: None;
-    color: white;
-}
-
-.link:hover {
-    color: white;
-    background-color: #0b5ed7;
-}
-
-
-
-.cantIcon {
-    color: #3483fa;
-    font-size: 30px;
-    margin: 1rem 2rem;
-    cursor: pointer;
+    align-items: baseline;
 }
 
 .btnAdd {
