@@ -1,28 +1,14 @@
 import './ItemDetail.css';
 import ItemTechSpecs from './ItemTechSpecs/ItemTechSpecs';
-import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ItemCount from '../ItemCount/ItemCount';
 import Loading from '../Loading/Loading';
 
 const ItemDetail = ({ item, count, setCount }) => {
     
-
     if (!item){
         return (
             <Loading/>
         )
-    }
-
-    const subtFunction = () => {
-        if (count > 0) {
-            setCount(count - 1)
-        }
-    }
-    const addFunction = () => {
-        if (count < item.stock) {
-            setCount(count + 1)
-        }
     }
 
     return (
@@ -36,11 +22,7 @@ const ItemDetail = ({ item, count, setCount }) => {
                 <h2 className="nameDetail"> {item.name} </h2>                
                 <p className="descriptionDetail"> <b>Description:</b> {item.description} </p>
                 <p className="priceDetail"> U$D {item.price*count} </p>
-                <div className="cantContainer">
-                        <FontAwesomeIcon className="cantIcon" icon={faMinusCircle} onClick={subtFunction}/>
-                        <h3>{count}</h3>
-                        <FontAwesomeIcon className="cantIcon" icon={faPlusCircle} onClick={addFunction} />  
-                </div>
+                <ItemCount setCount={setCount} count={count} item={item} />
                 <p>Stock {item.stock} u. </p>
                 <div className="buttons container-fluid row">        
                     <button type="button" className="col-sm-4 btn btn-primary">Buy Now</button>
