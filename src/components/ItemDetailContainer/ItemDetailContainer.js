@@ -13,7 +13,7 @@ return new Promise((resolve, reject) => {
 })
 }
 
-const ItemDetailContainer = ({count, setCount}) => {
+const ItemDetailContainer = ({setCartCount}) => {
 
     const [phoneDetail, setPhoneDetail] = useState([])
     const  {id}  = useParams()
@@ -40,7 +40,7 @@ const ItemDetailContainer = ({count, setCount}) => {
             <div className="">
                 <h1 className="title">Product Detail</h1>
             </div>                
-            <ItemDetail item={phoneDetail} count={count} setCount={setCount} />                 
+            <ItemDetail item={phoneDetail} setCartCount={setCartCount} />                 
         </section>            
     )
 }

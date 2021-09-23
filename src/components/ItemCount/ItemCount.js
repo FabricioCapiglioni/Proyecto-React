@@ -33,11 +33,11 @@ const ItemCount = ({item, count, setCount}) => {
 
    
     return (
-            <div className="cantContainer">
+            <div className="cantContainer col-sm-3">
                 <FontAwesomeIcon className="cantIcon" icon={faMinusCircle} onClick={subtFunction}/>
                     <input type='number' value={count} onChange={handleImpCant} onClick={clickSelectValue} />
-                {/* <h3>{count}</h3> */}
-                <FontAwesomeIcon className="cantIcon" icon={faPlusCircle} onClick={addFunction}/>                  
+                <FontAwesomeIcon className="cantIcon" icon={faPlusCircle} onClick={addFunction}/>    
+                {/* <p>Stock {item.stock} u. </p>   */}            
             </div>
     )
 }

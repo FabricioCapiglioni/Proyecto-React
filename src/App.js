@@ -9,39 +9,40 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import AboutUs from './components/AboutUs/AboutUs.js';
 import Contact from './components/Contact/Contact.js';
-
+import Cart from './components/Cart/Cart.js'
 
 function App() {
 
-  const [ count , setCount] = useState(0);
+  const [ cartCount , setCartCount] = useState(0);
 
 
   return (
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <NavBar count={count} />
+          <NavBar cartCount={cartCount} />
           <Carousel/> 
         </header>
         <div>
           <Switch> 
-            
-              <Route exact path='/about'>
-                <AboutUs />
-              </Route>
-              <Route exact path='/contact'>
-                <Contact />
-              </Route>
-              <Route exact path="/"> 
-                <ItemListContainer/>
-              </Route>
-              <Route exact path="/category/:brand"> 
-                <ItemListContainer/>
-              </Route>
-              <Route exact path="/item/:id"> 
-                <ItemDetailContainer count={count} setCount={setCount} />
-              </Route>
-            
+            <Route exact path='/about'>
+              <AboutUs />
+            </Route>
+            <Route exact path='/contact'>
+              <Contact />
+            </Route>
+            <Route exact path="/"> 
+              <ItemListContainer/>
+            </Route>
+            <Route exact path="/category/:brand"> 
+              <ItemListContainer/>
+            </Route>
+            <Route exact path="/item/:id"> 
+              <ItemDetailContainer setCartCount={setCartCount} />
+            </Route>
+            <Route exact path="/Cart"> 
+              <Cart/>
+            </Route>
           </Switch>
         </div>
       </div>

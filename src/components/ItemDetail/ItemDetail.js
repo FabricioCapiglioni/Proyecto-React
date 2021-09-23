@@ -1,9 +1,13 @@
+import { useState } from "react";
 import './ItemDetail.css';
 import ItemTechSpecs from './ItemTechSpecs/ItemTechSpecs';
 import ItemCount from '../ItemCount/ItemCount';
 import Loading from '../Loading/Loading';
+import { Link } from 'react-router-dom';
 
-const ItemDetail = ({ item, count, setCount }) => {
+const ItemDetail = ({ item, setCartCount }) => {
+
+    const [ count , setCount] = useState(0);
     
     if (!item){
         return (
@@ -11,6 +15,11 @@ const ItemDetail = ({ item, count, setCount }) => {
         )
     }
 
+    const onAdd = () => {
+        setCartCount(count)
+    }
+
+    
     return (
 
         <div className="container-fluid row ">
@@ -21,12 +30,22 @@ const ItemDetail = ({ item, count, setCount }) => {
                 <h2 className="brandDetail"> {item.brand} </h2>
                 <h2 className="nameDetail"> {item.name} </h2>                
                 <p className="descriptionDetail"> <b>Description:</b> {item.description} </p>
-                <p className="priceDetail"> U$D {item.price*count} </p>
-                <ItemCount setCount={setCount} count={count} item={item} />
-                <p>Stock {item.stock} u. </p>
-                <div className="buttons container-fluid row">        
-                    <button type="button" className="col-sm-4 btn btn-primary">Buy Now</button>
-                    <button type="button" className="col-sm-4 btn btn-secondary">Add to Cart</button>
+                <p className="priceDetail"> U$D {item.price} </p>
+                <div className="quantityContainer row">
+                    <ItemCount count={count} setCount={setCount} item={item} />
+                    <button type="button" className="col-sm-2 btnAdd btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
+                </div>
+                <div className="buttons container-fluid row">    
+                    <Link  className="col-sm-5" to={`/`}>                      
+                        <button type="button"className="col-sm-12 btn btn-primary" >
+                            More products
+                        </button>
+                    </Link>
+                    <Link  className="col-sm-5" to={`/cart`}>
+                        <button type="button"className="col-sm-12 btn btn-success" >
+                            Go to cart
+                        </button>                    
+                    </Link>
                 </div>
                 <ItemTechSpecs item={item} />
             </div>

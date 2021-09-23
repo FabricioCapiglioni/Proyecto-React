@@ -18,11 +18,22 @@
     font-size: 1.4rem;
 }
 
-.cantContainer {
-    display: flex;
+.quantityContainer {
+
     justify-content: center;
-    align-items: center;
 }
+.link {
+    font-size: 1.4rem;
+    text-decoration: None;
+    color: white;
+}
+
+.link:hover {
+    color: white;
+    background-color: #0b5ed7;
+}
+
+
 
 .cantIcon {
     color: #3483fa;
@@ -31,9 +42,14 @@
     cursor: pointer;
 }
 
-.buttons{
+.btnAdd {
+    font-size: 1.2rem;
+    justify-content: left;
+}
+
+.buttons {
     justify-content: space-evenly;
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .btn {
