@@ -8,14 +8,14 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import AboutUs from './components/AboutUs/AboutUs.js';
 import Contact from './components/Contact/Contact.js';
 import Cart from './components/Cart/Cart.js'
-import {CartProvider} from './Context/CartContext'
+import {CartContextProvider} from './Context/CartContext'
 import Error404 from './components/Error404/Error404'
 
 function App() {
 
   return (
     <div className="App">
-      <CartProvider>
+      <CartContextProvider>
         <BrowserRouter>
         <header className="App-header">
           <NavBar/>
@@ -32,7 +32,7 @@ function App() {
           </Switch>
         </div>
         </BrowserRouter>
-      </CartProvider>
+      </CartContextProvider>
     </div>
   );
 }

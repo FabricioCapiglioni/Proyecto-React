@@ -4,7 +4,7 @@ import ItemTechSpecs from './ItemTechSpecs/ItemTechSpecs';
 import ItemCount from '../ItemCount/ItemCount';
 import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
-import CartContext from "../../Context/CartContext";
+import {CartContext} from "../../Context/CartContext";
 
 const ItemDetail = ({item}) => {
 
