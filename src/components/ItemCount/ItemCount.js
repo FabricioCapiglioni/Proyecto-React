@@ -3,6 +3,7 @@ import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 const ItemCount = ({item, count, setCount}) => {
 
     

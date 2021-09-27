@@ -7,7 +7,7 @@ import { NavLink, Link } from 'react-router-dom';
 const NavBar = ({cartCount}) => {
 
     return (
-        <nav className="nav fixed-top">
+        <nav className="nav ">
             <div className="container col-sm-2">
                 <Link to='/' className="navbar-brand" href="#/">
                     <img src={logo} alt="" width="50" height="50"></img>

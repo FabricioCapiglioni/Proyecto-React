@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './ItemDetail.css';
 import ItemTechSpecs from './ItemTechSpecs/ItemTechSpecs';
 import ItemCount from '../ItemCount/ItemCount';
 import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
+import CartContext from "../../Context/CartContext";
 
-const ItemDetail = ({ item, setCartCount }) => {
+const ItemDetail = ({item}) => {
 
     const [ count , setCount] = useState(0);
+    const { addItem } = useContext(CartContext)
     
     if (!item){
         return (
@@ -16,7 +18,8 @@ const ItemDetail = ({ item, setCartCount }) => {
     }
 
     const onAdd = () => {
-        setCartCount(count)
+        addItem(item, count)
+        setCount(0)
     }
 
     

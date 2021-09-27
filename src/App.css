@@ -6,7 +6,8 @@
 
 .App-header {
   background-color: #282c34;
-  height: 100vh;
+  height: 8vh;
+  min-height: 4.6rem;
   display: block;  
   font-size: calc(10px + 2vmin);
 }

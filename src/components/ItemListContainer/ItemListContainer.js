@@ -4,6 +4,8 @@ import './ItemListContainer.css'
 import products from '../../assets/products.js'
 import ItemList from '../ItemList/ItemList'
 import Loading from '../Loading/Loading';
+import Carousel from '../Carousel/Carousel'
+
 
 
 function getList() {
@@ -43,18 +45,22 @@ const ItemListContainer = () => {
         )
     }
 
+    const brandTitle = brand;
+
+    function capt(brandTitle) {
+    return brandTitle.charAt(0).toUpperCase() + brandTitle.slice(1);
+    }
+
 
     return ( 
-        <section className="container-fluid">
-            <div>
-                <h1 className="title">Our Products</h1>
+        <>
+            {!brand ? <Carousel/> : null}
+            <div className="container-fluid">
+                {brand ? <h1 className="title">{capt(brandTitle)}</h1> : <h1 className="title">Our Products</h1> } 
+                <ItemList item={listPhones} />
                 
             </div>
-            
-            <ItemList item={listPhones} />
-            
-        </section>
-
+        </>
     )
 }
 
