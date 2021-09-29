@@ -10,7 +10,6 @@ const CartList = ({cart}) => {
             {cart.map(product => (
                 <CartItem key={product.id} product={product} />
         )
-    
         )} </div>
     );
 }

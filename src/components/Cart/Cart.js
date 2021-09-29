@@ -6,14 +6,12 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-
     const [total, setTotal] = useState(0)
     const { cart, clearCart, getTotal } = useContext(CartContext)
 
     useEffect (() =>{
         setTotal(getTotal())
     },[getTotal])
-
 
     return (
             <div>

@@ -21,13 +21,10 @@ export const CartContextProvider = ({children}) => {
           (total, item) => total + item.price * item.quantity,
           0
         );
-      };
+    };
 
     const addItem = (item, quantityAdded) => {
-
-        
         if (isInCart(item.id)) {
-
             const upDateCart = cart.map((prod) => {
                 if(prod.id === item.id){
                     const newQuantity = prod.quantity + quantityAdded 
@@ -37,26 +34,12 @@ export const CartContextProvider = ({children}) => {
                         quantity: newQuantity
                     }
                 }
-
                 return prod
-            }) 
-            
+            })  
             setCart([upDateCart]);
-
-            console.log(`hola es la 2da vez`)
-            console.log(cart)
-
           } else {
-
-            console.log('el item no estaba en el carrito')
-
             const newItem = { 'quantity': quantityAdded, ...item}
-            
-            console.log(newItem)
-
             setCart([...cart, newItem]);
-            console.log('cart es igual a:')
-            console.log(cart)
         }        
     }
 

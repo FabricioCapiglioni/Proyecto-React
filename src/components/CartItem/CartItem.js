@@ -10,7 +10,6 @@ const CartItem = ({product}) => {
     const { removeItem } = useContext(CartContext)
    
     return (
-
         <div class="prod row">
             <div class="eliminarItem col-sm-1">
                 <FontAwesomeIcon className="techIcon" icon={faTrash} onClick={() => removeItem(product.id)} />
@@ -30,7 +29,6 @@ const CartItem = ({product}) => {
                 <p  class="precioItem col-sm-4">$ {product.price * product.quantity} </p>
             </div> 
         </div>
-
     )
 }
   
