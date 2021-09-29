@@ -10,32 +10,32 @@ const ItemTechSpecs = ({ item }) => {
             <div className="techContainer col-sm-4">
                 <FontAwesomeIcon className="techIcon" icon={faMicrochip} />
                 <h3> Chip </h3>
-                <p> {item?.techSpecs?.chip} </p>
+                <p> {item?.chip} </p>
             </div> 
             <div className="techContainer col-sm-4">
                 <FontAwesomeIcon className="techIcon" icon={faSdCard} />
                 <h3> Capacity </h3>
-                <p> {item?.techSpecs?.capacity} </p>
+                <p> {item?.capacity} </p>
             </div> 
             <div className="techContainer col-sm-4">
                 <FontAwesomeIcon className="techIcon" icon={faMobile} />
                 <h3> Display </h3>
-                <p> {item?.techSpecs?.display} </p>
+                <p> {item?.display} </p>
             </div> 
             <div className="techContainer col-sm-4">
                 <FontAwesomeIcon className="techIcon" icon={faMemory} />
                 <h3> RAM Memory </h3>
-                <p> {item?.techSpecs?.ram} </p>
+                <p> {item?.ram} </p>
             </div> 
             <div className="techContainer col-sm-4">
                 <FontAwesomeIcon className="techIcon" icon={faCamera} />
                 <h3> Camera </h3>
-                <p> {item?.techSpecs?.camera} </p>
+                <p> {item?.camera} </p>
             </div> 
             <div className="techContainer col-sm-4">
                 <FontAwesomeIcon className="techIcon" icon={faBatteryHalf} />
                 <h3> Batery </h3>
-                <p> {item?.techSpecs?.batery} </p>
+                <p> {item?.batery} </p>
             </div> 
         </div>
 

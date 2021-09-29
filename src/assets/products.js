@@ -16,14 +16,12 @@ const products = [{
     price: 1200,
     pictureUrl: iphone12,
     category: "iPhone-12-Series",
-    techSpecs: {
-        ram: "6 GB",
-        capacity: "256 GB",
-        display: "Super Retina XDR display 6.7‑inch (diagonal) all‑screen OLED display 2778‑by‑1284-pixel resolution at 458 ppi",
-        chip: "A14 Bionic chip",
-        camera: "Front 12 MP / Rear 12 + 12 + 12 MP",
-        batery: "3.687 mAh"
-    }
+    ram: "6 GB",
+    capacity: "256 GB",
+    display: "Super Retina XDR display 6.7‑inch (diagonal) all‑screen OLED display 2778‑by‑1284-pixel resolution at 458 ppi",
+    chip: "A14 Bionic chip",
+    camera: "Front 12 MP / Rear 12 + 12 + 12 MP",
+    batery: "3.687 mAh"
 },
 {
     id: "02",
@@ -34,14 +32,12 @@ const products = [{
     price: 1300,
     pictureUrl: s21,
     category: "Galaxy-S-Series",
-    techSpecs: {
-        ram: "12 GB",
-        capacity: "256 GB",
-        display: 'Dynamic AMOLED 2X 6.8", Resolution: 3200 x 1440 (Quad HD+)',
-        chip: "Snapdragon 888, Speed: 2.9GHz",
-        camera: "Front 40 MP / Rear 108 MP + 10 MP + 12 MP + 10 MP",
-        batery: "5000 mAh"
-    }
+    ram: "12 GB",
+    capacity: "256 GB",
+    display: 'Dynamic AMOLED 2X 6.8", Resolution: 3200 x 1440 (Quad HD+)',
+    chip: "Snapdragon 888, Speed: 2.9GHz",
+    camera: "Front 40 MP / Rear 108 MP + 10 MP + 12 MP + 10 MP",
+    batery: "5000 mAh"
 },
 {
     id: "03",
@@ -52,14 +48,12 @@ const products = [{
     price: 1400,
     pictureUrl: mi11ultra,
     category: "Mi-11-Series",
-    techSpecs: {
-        ram: "12 GB",
-        capacity: "256 GB",
-        display: 'Quad-curved displayWQHD+ 6.81" AMOLED DotDisplay, Resolution: 3200 x 1440',
-        chip: "Snapdragon 888, Speed: 2.9GHz",
-        camera: "Front 20 MP / Rear 50 MP + 48 MP + 48 MP",
-        batery: "5000 mAh"
-    }
+    ram: "12 GB",
+    capacity: "256 GB",
+    display: 'Quad-curved displayWQHD+ 6.81" AMOLED DotDisplay, Resolution: 3200 x 1440',
+    chip: "Snapdragon 888, Speed: 2.9GHz",
+    camera: "Front 20 MP / Rear 50 MP + 48 MP + 48 MP",
+    batery: "5000 mAh"
 },
 {
     id: "04",
@@ -70,14 +64,12 @@ const products = [{
     price: 1250,
     pictureUrl: z2fold,
     category: "Galaxy-Z-Series",
-    techSpecs: {
-        ram: "12 GB",
-        capacity: "256 GB",
-        display: 'Dynamic AMOLED 2X 7.6" full rectangle, Resolution: 2208 x 1768 (QXGA+)',
-        chip: "Snapdragon 865, Speed: 3.09 GHz ",
-        camera: "Front 10 MP  / Rear 12 MP + 12 MP + 12 MP / Cover Camera 10.0 MP",
-        batery: "4500 mAh"
-    }
+    ram: "12 GB",
+    capacity: "256 GB",
+    display: 'Dynamic AMOLED 2X 7.6" full rectangle, Resolution: 2208 x 1768 (QXGA+)',
+    chip: "Snapdragon 865, Speed: 3.09 GHz ",
+    camera: "Front 10 MP  / Rear 12 MP + 12 MP + 12 MP / Cover Camera 10.0 MP",
+    batery: "4500 mAh"
 }, 
 {
     id: "05",
@@ -88,14 +80,12 @@ const products = [{
     price: 1400,
     pictureUrl: iphone13,
     category: "iPhone-13-Series",
-    techSpecs: {
-        ram: "6 GB",
-        capacity: "256 GB",
-        display: 'Super Retina XDR OLED, 120Hz 6.7" Resolution: 1284 x 2778 pixels',
-        chip: "A15 Bionic chip",
-        camera: "Front 12 MP / Rear 12 MP + 12 MP + 12 MP",
-        batery: "4,400 mAh"
-    }
+    ram: "6 GB",
+    capacity: "256 GB",
+    display: 'Super Retina XDR OLED, 120Hz 6.7" Resolution: 1284 x 2778 pixels',
+    chip: "A15 Bionic chip",
+    camera: "Front 12 MP / Rear 12 MP + 12 MP + 12 MP",
+    batery: "4,400 mAh"
 },
 {
     id: "06",
@@ -106,14 +96,12 @@ const products = [{
     price: 1100,
     pictureUrl: mi11tpro,
     category: "Mi-11-Series",
-    techSpecs: {
-        ram: "12 GB",
-        capacity: "256 GB",
-        display: 'AMOLED DotDisplay 6.67" 120Hz Resolution: 3200 x 1440',
-        chip: "Snapdragon 888, Speed: 2.9GHz",
-        camera: "Front 16 MP / Rear 108 MP +8 MP + 5 MP ",
-        batery: "5000 mAh"
-    }
+    ram: "12 GB",
+    capacity: "256 GB",
+    display: 'AMOLED DotDisplay 6.67" 120Hz Resolution: 3200 x 1440',
+    chip: "Snapdragon 888, Speed: 2.9GHz",
+    camera: "Front 16 MP / Rear 108 MP +8 MP + 5 MP ",
+    batery: "5000 mAh"
 }
 ]
 
