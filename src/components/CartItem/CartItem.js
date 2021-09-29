@@ -5,12 +5,10 @@ import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 
 
-
-
 const CartItem = ({product}) => {
 
     const { removeItem } = useContext(CartContext)
-
+   
     return (
 
         <div class="prod row">
@@ -19,7 +17,7 @@ const CartItem = ({product}) => {
             </div>
             <div class="prodDesc row col-sm-4">
                 <div class="imgProd col-sm-4">
-                    <img src={product.img} alt="img" />
+                    <img src={product.pictureUrl} alt="img" />
                 </div>
                 <div class="prodType col-sm-8">
                     <p>{product.name}</p>
@@ -29,7 +27,7 @@ const CartItem = ({product}) => {
                 <label> {product.quantity} </label>
             </div>
             <div class="row price col-sm-2">
-                <p  class="precioItem col-sm-4">$</p>
+                <p  class="precioItem col-sm-4">$ {product.price * product.quantity} </p>
             </div> 
         </div>
 
