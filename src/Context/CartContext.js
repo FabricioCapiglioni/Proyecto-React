@@ -10,10 +10,7 @@ export const CartContextProvider = ({children}) => {
         
 
     const isInCart = (itemId) => {
-        let isIn = false
-        isIn = cart.some((product) => product.id === itemId) 
-        console.log(`el item esta en el carrito: ${isIn}`)
-        return isIn
+        return cart.some((product) => product.id === itemId) 
     };
 
     const getTotal = () => {
@@ -25,20 +22,21 @@ export const CartContextProvider = ({children}) => {
 
     const addItem = (item, quantityAdded) => {
         if (isInCart(item.id)) {
-            const upDateCart = cart.map((prod) => {
+            const upDateCart = cart.map(prod => {
                 if(prod.id === item.id){
-                    const newQuantity = prod.quantity + quantityAdded 
+                    let newQuantity = prod.quantity + quantityAdded;
                     console.log(newQuantity)
-                    return {
+                    const upDateProduct = {
                         ...prod,
-                        quantity: newQuantity
-                    }
+                        quantity: parseInt(newQuantity)
+                    } 
+                    return upDateProduct
                 }
                 return prod
             })  
-            setCart([upDateCart]);
+            setCart(upDateCart);
           } else {
-            const newItem = { 'quantity': quantityAdded, ...item}
+            const newItem = { quantity: quantityAdded, ...item}
             setCart([...cart, newItem]);
         }        
     }
