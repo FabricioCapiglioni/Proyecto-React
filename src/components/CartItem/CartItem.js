@@ -1,14 +1,28 @@
 import './CartItem.css'
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
+import { NavLink } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 
 
 const CartItem = ({product}) => {
 
-    const { removeItem } = useContext(CartContext)
-   
+    const [count, setCount] = useState(product.quantity)
+    const [handdleQty, setHanddleQty] = useState(false)
+    const { removeItem, changeQty } = useContext(CartContext)
+    
+    
+    const changeQuantity = () => {
+        setHanddleQty(true)
+    }
+
+    const confirmQuty = () => {
+        changeQty(product, count)        
+        setHanddleQty(false)
+    }
+
     return (
         <div className="prod row">
             <div className="eliminarItem col-sm-1">
@@ -19,11 +33,22 @@ const CartItem = ({product}) => {
                     <img src={product.pictureUrl} alt="img" />
                 </div>
                 <div className="prodType col-sm-8">
-                    <p>{product.name}</p>
+                    <NavLink to={`/item/${product.id}`}><p>{product.name}</p></NavLink>
                 </div>
             </div>
             <div className="itemCant row col-sm-4">
-                <label> {product.quantity} </label>
+                
+               { !handdleQty ?
+                    <p className="itemQuantity col-sm-8"> Quantity: {product.quantity} 
+                        <FontAwesomeIcon className="techIcon" icon={faEdit} onClick={() => changeQuantity()}/>
+                    </p>
+               :
+                    <>
+                        <ItemCount count={count} setCount={setCount} item={product} />
+                        <FontAwesomeIcon className="techIcon" icon={faCheck} onClick={() => confirmQuty()}/>
+                    </>
+                }
+                    
             </div>
             <div className="row price col-sm-2">
                 <p  className="precioItem col-sm-4">$ {product.price * product.quantity} </p>

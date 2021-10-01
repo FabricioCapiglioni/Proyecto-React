@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ItemCount = ({item, count, setCount}) => {
 
-    
 
     const subtFunction = () => {
         if (count > 0) {

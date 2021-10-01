@@ -11,7 +11,7 @@ const Cart = () => {
 
     useEffect (() =>{
         setTotal(getTotal())
-    },[getTotal])
+    },[getTotal, cart])
 
     console.log(cart)
 
@@ -42,12 +42,8 @@ const Cart = () => {
                     ) : 
                     (
                     <div className="tienda__cartNoElements">
-                        <p className="tienda__cartNoElementsText">
-                        No hay elementos en tu carrito
-                        </p>
-                        <Link to="/" className="tienda__cartNoElementsLink">
-                        Volver al menú principal
-                        </Link>
+                        <p>There are no products in your cart</p>
+                        <Link to="/">Back to main</Link>
                     </div>
                 )}
                 </main>        

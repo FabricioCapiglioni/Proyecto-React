@@ -20,6 +20,21 @@ export const CartContextProvider = ({children}) => {
         );
     };
 
+    
+    const changeQty = (item, count) => {
+        const upDateCart = cart.map(prod => {
+            if(prod.id === item.id){
+                const upDateProduct = {
+                    ...prod,
+                    quantity: parseInt(count)
+                } 
+                return upDateProduct
+            }
+            return prod
+        })  
+        setCart(upDateCart);
+    }
+
     const addItem = (item, quantityAdded) => {
         if (isInCart(item.id)) {
             const upDateCart = cart.map(prod => {
@@ -54,7 +69,7 @@ export const CartContextProvider = ({children}) => {
     }
     
     return(
-        <CartContext.Provider value={{ addItem, removeItem, clearCart, cart, getTotal }}>
+        <CartContext.Provider value={{ addItem, removeItem, clearCart, cart, getTotal, changeQty }}>
             {children}
         </CartContext.Provider>
     )

@@ -9,7 +9,7 @@ import {CartContext} from "../../Context/CartContext";
 const ItemDetail = ({item}) => {
 
     const [ count , setCount] = useState(0);
-    const { addItem } = useContext(CartContext)
+    const { addItem, cart } = useContext(CartContext)
     
     if (!item){
         return (
@@ -21,6 +21,10 @@ const ItemDetail = ({item}) => {
         addItem(item, count)
         setCount(0)
     }
+
+    const isInCart = (itemId) => {
+        return cart.some((product) => product.id === itemId) 
+    };
 
     
     return (
@@ -35,8 +39,17 @@ const ItemDetail = ({item}) => {
                 <p className="descriptionDetail"> <b>Description:</b> {item.description} </p>
                 <p className="priceDetail"> U$D {item.price} </p>
                 <div className="quantityContainer row">
-                    <ItemCount count={count} setCount={setCount} item={item} />
-                    <button type="button" className="col-sm-2 btnAdd btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
+                    
+                   { !isInCart(item.id) ? 
+                        <>
+                        <ItemCount count={count} setCount={setCount} item={item} />
+                        <button type="button" className="col-sm-2 btnAdd btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
+                        </>
+                    :
+                    <h3>This product is already in your cart</h3>
+                    
+                     
+                    }
                 </div>
                 <div className="buttons container-fluid row">    
                     <Link  className="col-sm-5" to={`/`}>                      
