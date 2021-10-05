@@ -1,18 +1,12 @@
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router';
 import './ItemListContainer.css'
-import products from '../../assets/products.js'
 import ItemList from '../ItemList/ItemList'
 import Loading from '../Loading/Loading';
 import Carousel from '../Carousel/Carousel'
+import { db } from '../../assets/Services/firebase/firebase'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
-
-
-function getList() {
-return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(products), 2000)
-})
-}
 
 
 const ItemListContainer = () => {
@@ -21,22 +15,32 @@ const ItemListContainer = () => {
     const  {brand}  = useParams()
 
     useEffect(() => {
-        const list = getList()
+        if (!brand) {
+            getDocs(collection(db, 'Products')).then((querySnapshot) => {
+                const products = querySnapshot.docs.map(doc => {
+                    return { id: doc.id, ...doc.data() }
+                }) 
+                setListPhones(products)
+            }).catch((error) => {
+                console.log('Error searching intems', error)
+            }) 
+            return (() => {
+                setListPhones([])
+            })
 
-        list.then(list => {
-            if (!brand) {
-                setListPhones(list)
             } else {
-                const prodCategory = list.filter(prod => prod.brand.toLowerCase() === brand)
-            setListPhones(prodCategory)
-            }
-                        
-        }, err => {
-            console.log(err);
-        })
-        return (() => {
-            setListPhones([])
-          })
+                getDocs(query(collection(db, 'Products'), where('brand', '==', brand))).then((querySnapshot) => {
+                const products = querySnapshot.docs.map(doc => {
+                return { id: doc.id, ...doc.data() }
+                }) 
+                setListPhones(products)
+            }).catch((error) => {
+                console.log('Error searching intems', error)
+            })
+            return (() => {
+                setListPhones([])
+            })         
+        } 
     }, [brand])
 
     if (listPhones.length === 0 ) {

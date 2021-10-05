@@ -1,17 +1,12 @@
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router';
 import './ItemDetailContainer.css';
-import products from '../../assets/products.js';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loading from '../Loading/Loading';
+import { db } from '../../assets/Services/firebase/firebase'
+import { doc, getDoc } from 'firebase/firestore'
+ 
 
-
-function getProduct() {
-
-return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(products), 2000)
-})
-}
 
 const ItemDetailContainer = () => {
 
@@ -19,17 +14,13 @@ const ItemDetailContainer = () => {
     const  {id}  = useParams()
 
     useEffect(() => {
-        const list = getProduct()
-
-        list.then(list => {
-            const product = list.find(prod => prod.id === id)
+        getDoc(doc(db, 'Products' , id)).then((querySnapshot) => {
+            const product = { id: querySnapshot.id, ...querySnapshot.data()}
             setPhoneDetail(product)
-        }, err => {
-            console.log(err);
         })
     }, [ id ])
 
-    if (phoneDetail.length === 0 ) {
+    if ( phoneDetail.length === 0 ) {
         return (
            <Loading /> 
         )

@@ -8,7 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import AboutUs from './components/AboutUs/AboutUs.js';
 import Contact from './components/Contact/Contact.js';
 import Cart from './components/Cart/Cart.js'
-import {CartContextProvider} from './Context/CartContext'
+import {CartContextProvider} from './context/CartContext'
 import Error404 from './components/Error404/Error404'
 
 function App() {

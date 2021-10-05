@@ -4,12 +4,14 @@ import ItemTechSpecs from './ItemTechSpecs/ItemTechSpecs';
 import ItemCount from '../ItemCount/ItemCount';
 import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
-import {CartContext} from "../../Context/CartContext";
+import { CartContext } from "../../context/CartContext";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 
 const ItemDetail = ({item}) => {
 
     const [ count , setCount] = useState(0);
-    const { addItem, cart } = useContext(CartContext)
+    const { addItem, cart, removeItem } = useContext(CartContext)
     
     if (!item){
         return (
@@ -19,36 +21,43 @@ const ItemDetail = ({item}) => {
 
     const onAdd = () => {
         addItem(item, count)
-        setCount(0)
+        setCount(0)        
     }
 
     const isInCart = (itemId) => {
         return cart.some((product) => product.id === itemId) 
     };
 
+    const brandTitle = item.brand;
+
+    function capt(brandTitle) {
+        return brandTitle.charAt(0).toUpperCase() + brandTitle.slice(1);
+        }
+
     
     return (
 
         <div className="container-fluid row ">
             <div className="col-sm-6">
-                <img src={item.pictureUrl} alt="..." ></img>
+                <img className='imgProduct' src={item.pictureUrl} alt="..." ></img>
             </div>
             <div className="col-sm-6 itemDetail">
-                <h2 className="brandDetail"> {item.brand} </h2>
+                <h2 className="brandDetail"> {capt(brandTitle)} </h2>
                 <h2 className="nameDetail"> {item.name} </h2>                
                 <p className="descriptionDetail"> <b>Description:</b> {item.description} </p>
                 <p className="priceDetail"> U$D {item.price} </p>
                 <div className="quantityContainer row">
                     
                    { !isInCart(item.id) ? 
-                        <>
-                        <ItemCount count={count} setCount={setCount} item={item} />
-                        <button type="button" className="col-sm-2 btnAdd btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
-                        </>
+                    <>
+                    <ItemCount count={count} setCount={setCount} item={item} />
+                    <button type="button" className="col-sm-2 btnAdd btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
+                    </>
                     :
-                    <h3>This product is already in your cart</h3>
-                    
-                     
+                    <>                    
+                    <h3 className="isInCart" ><FontAwesomeIcon className="" icon={faExclamationCircle}/>  this product is already in your cart</h3>
+                    <button type="button" className="col-sm-4 btnAdd btn btn-secondary" onClick={() => removeItem(item.id)}>Remove from cart</button>
+                    </>
                     }
                 </div>
                 <div className="buttons container-fluid row">    

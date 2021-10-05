@@ -1,7 +1,7 @@
 import './Cart.css'
 import CartList from '../CartList/CartList'
 import { useContext, useState, useEffect } from "react";
-import {CartContext} from "../../Context/CartContext";
+import {CartContext} from "../../context/CartContext";
 import { Link } from 'react-router-dom';
 
 
@@ -13,8 +13,6 @@ const Cart = () => {
         setTotal(getTotal())
     },[getTotal, cart])
 
-    console.log(cart)
-
     return (
             <div>
                 <h1>Cart</h1>       
@@ -22,27 +20,30 @@ const Cart = () => {
                 {cart.length !== 0 ? (
                     <>
                         <CartList cart={cart} />
-                        <div class="suma row">
-                            <div class="direccion col-sm-4">
-                                <button id="btnFormDireccion" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
-                                    Dirección de envío
-                                </button>
-                            </div>  
-                            <div id="totalCompra" class="sumaTotal col-sm-8">
-                                <p>Total con envío</p>
-                                <p> $ {total} </p>
+                        <div className="checkOut">
+                            <div className="add row col-sm-8">
+                                <div className="address col-sm-6">
+                                    <button id="btnFormAddress" type="button" className="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Shipping address
+                                    </button>
+                                </div>  
+                                <div className="total col-sm-6">
+                                    <p> Total() </p>
+                                    <p> $ {total} </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button id="vaciar" class="btn btn-primary me-md-2" type="button" onClick={() => clearCart()}>Vaciar Carrito</button>
-                            <button id="continuarCompra" class="btn btn-primary me-md-2" type="button">Continuar</button>
+                        <div className="buttonsCheckOut">
+                            <button className="btn btn-danger me-md-4" type="button" onClick={() => clearCart()}>Clear</button>
+                            <button className="btn btn-primary me-md-4" type="button">Continuar</button>
                         </div>
+                        
                     </>
                     ) : 
                     (
                     <div className="tienda__cartNoElements">
-                        <p>There are no products in your cart</p>
+                        <p>Your cart is empty</p>
                         <Link to="/">Back to main</Link>
                     </div>
                 )}

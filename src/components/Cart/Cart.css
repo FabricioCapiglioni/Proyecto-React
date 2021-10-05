@@ -1,0 +1,24 @@
+.checkOut {
+    display: flex;
+    justify-content: center;
+}
+
+.add {
+    border-top: 1px black solid;
+    align-items: center;
+    padding: 1rem;
+}
+
+.total {
+    font-size: 2rem;
+
+    padding-left: 1rem;
+}
+
+.total :last-child{
+    color: red;
+}
+
+.buttonsCheckOut{
+    justify-content: right;
+}

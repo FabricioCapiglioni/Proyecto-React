@@ -26,7 +26,7 @@ const products = [{
 {
     id: "02",
     brand: "Samsung",
-    name: "Samsung S21+",
+    name: "Samsung S21 Ultra",
     description: "Smartphone Samsung Galaxy S 21 Ultra",
     stock: 50,
     price: 1300,
@@ -67,7 +67,7 @@ const products = [{
     ram: "12 GB",
     capacity: "256 GB",
     display: 'Dynamic AMOLED 2X 7.6" full rectangle, Resolution: 2208 x 1768 (QXGA+)',
-    chip: "Snapdragon 865, Speed: 3.09 GHz ",
+    chip: "Snapdragon 865, Speed: 3.09 GHz",
     camera: "Front 10 MP  / Rear 12 MP + 12 MP + 12 MP / Cover Camera 10.0 MP",
     batery: "4500 mAh"
 }, 
@@ -100,7 +100,7 @@ const products = [{
     capacity: "256 GB",
     display: 'AMOLED DotDisplay 6.67" 120Hz Resolution: 3200 x 1440',
     chip: "Snapdragon 888, Speed: 2.9GHz",
-    camera: "Front 16 MP / Rear 108 MP +8 MP + 5 MP ",
+    camera: "Front 16 MP / Rear 108 MP +8 MP + 5 MP",
     batery: "5000 mAh"
 }
 ]

@@ -32,8 +32,10 @@ const NavBar = () => {
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">                            
                             <NavLink to={`/category/apple`} key="01" className="dropdown-item" ><li>Apple</li></NavLink>
-                            <NavLink to={`/category/samsung`} key="02" className="dropdown-item" ><li>Samsung</li></NavLink>
-                            <NavLink to={`/category/xiaomi`} key="03" className="dropdown-item" ><li>Xiaomi</li></NavLink>                            
+                            <NavLink to={`/category/asus`} key="02" className="dropdown-item" ><li>Asus</li></NavLink>
+                            <NavLink to={`/category/google`} key="03" className="dropdown-item" ><li>Google</li></NavLink>
+                            <NavLink to={`/category/samsung`} key="04" className="dropdown-item" ><li>Samsung</li></NavLink>
+                            <NavLink to={`/category/xiaomi`} key="05" className="dropdown-item" ><li>Xiaomi</li></NavLink>                            
                         </ul>
                     </li>
                 </ul>

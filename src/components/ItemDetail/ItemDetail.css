@@ -1,3 +1,7 @@
+.imgProduct {
+    max-width: 800px;
+}
+
 .itemDetail{
     background-color: #f5f5f5;
     box-shadow: 0px 0px 15px -4px rgba(233, 7, 7, 0.424);
@@ -26,6 +30,12 @@
 .btnAdd {
     font-size: 1.2rem;
     justify-content: left;
+}
+
+.isInCart{
+    color: red;
+    font-size: 1.2rem;
+    background-color: white;
 }
 
 .buttons {
