@@ -14,7 +14,7 @@ const CartWidget = ({cartCount}) => {
         <div className="navIcons col-sm-2">
             <FontAwesomeIcon className="userIcon" icon={faUser}/>
             <Link  className="btn btn-primary" to={`/cart`}><FontAwesomeIcon className="cartIcon"icon={faShoppingCart}/></Link>
-            <p className="cartCount">{getTotalCount()}</p>
+            {(getTotalCount() > 0 ) && <p className="cartCount">{getTotalCount()}</p>}
         </div>
     ) 
 }
