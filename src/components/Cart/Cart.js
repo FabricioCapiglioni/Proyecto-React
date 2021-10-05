@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const [total, setTotal] = useState(0)
-    const { cart, clearCart, getTotal } = useContext(CartContext)
+    const { cart, clearCart, getTotal, getTotalCount } = useContext(CartContext)
 
     useEffect (() =>{
         setTotal(getTotal())
@@ -29,7 +29,7 @@ const Cart = () => {
                                     </button>
                                 </div>  
                                 <div className="total col-sm-6">
-                                    <p> Total() </p>
+                                    <p> Total ({getTotalCount()} items) </p>
                                     <p> $ {total} </p>
                                 </div>
                             </div>

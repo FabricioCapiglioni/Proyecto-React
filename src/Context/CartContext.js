@@ -7,6 +7,7 @@ export const CartContext = createContext();
 export const CartContextProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
+    
         
 
     const isInCart = (itemId) => {
@@ -20,6 +21,13 @@ export const CartContextProvider = ({children}) => {
         );
     };
 
+    const getTotalCount = () => {
+        let totalItems = 0
+        cart.forEach(prod => {
+            totalItems = totalItems + prod.quantity
+        })
+        return totalItems
+    }
     
     const changeQty = (item, count) => {
         const upDateCart = cart.map(prod => {
@@ -69,7 +77,7 @@ export const CartContextProvider = ({children}) => {
     }
     
     return(
-        <CartContext.Provider value={{ addItem, removeItem, clearCart, cart, getTotal, changeQty }}>
+        <CartContext.Provider value={{ addItem, removeItem, clearCart, cart, getTotal, changeQty, getTotalCount }}>
             {children}
         </CartContext.Provider>
     )

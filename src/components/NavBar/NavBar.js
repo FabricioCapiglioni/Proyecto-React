@@ -2,18 +2,8 @@ import './NavBar.css'
 import logo from '../../assets/img/logo.png'
 import CartWidget from '../CartWidget/CartWidget';
 import { NavLink, Link } from 'react-router-dom';
-/* import { useContext, useState, useEffect } from "react";
-import {CartContext} from "../../Context/CartContext"; */
-
 
 const NavBar = () => {
-
-  /*   const [cartCount, setcartCount] = useState(0)
-    const { getTotal } = useContext(CartContext)
-
-    /* useEffect (() =>{
-        setcartCount(getTotal())
-    },[getTotal]) */
 
     return (
         <nav className="nav ">
@@ -42,7 +32,7 @@ const NavBar = () => {
                 <NavLink to='/about' className="nav-link" href="#/">About Us</NavLink>
                 <NavLink to='/contact' className="nav-link " aria-current="page" href="dangerouslySetInnerHTML">Contact</NavLink>
             </div>
-            <CartWidget /*cartCount= {cartCount} *//>
+            <CartWidget />
         </nav>
     )
 }
