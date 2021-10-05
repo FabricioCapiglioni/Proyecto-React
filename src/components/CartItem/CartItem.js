@@ -33,7 +33,7 @@ const CartItem = ({product}) => {
                     <img src={product.pictureUrl} alt="img" />
                 </div>
                 <div className="row itemName col-sm-8">
-                    <p className="d-block">Brand</p>
+                    <p className="d-block">Model</p>
                     <p className="d-block"><NavLink to={`/item/${product.id}`}>{product.name}</NavLink></p>
                 </div>
             </div>
