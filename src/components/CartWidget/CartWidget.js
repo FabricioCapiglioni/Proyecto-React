@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext"; 
 
 
-const CartWidget = ({cartCount}) => {
+const CartWidget = () => {
 
     const { getTotalCount } = useContext(CartContext)
 
