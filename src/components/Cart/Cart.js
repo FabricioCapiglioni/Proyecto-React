@@ -7,8 +7,6 @@ import {db} from '../../assets/Services/firebase/firebase'
 import { Link } from 'react-router-dom';
 import { Confirmation, Processing, Error } from './AlertsBuy/AlertsBuy';
 
-
-
 const Cart = () => {
     const [total, setTotal] = useState(0)
     const [checking, setChecking] = useState(false)
