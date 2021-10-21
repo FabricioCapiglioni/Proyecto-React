@@ -4,8 +4,8 @@ import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
 import Loading from '../Loading/Loading';
 import Carousel from '../Carousel/Carousel'
-import { db } from '../../assets/Services/firebase/firebase'
-import { collection, getDocs, query, where } from 'firebase/firestore'
+import { getProducts } from '../../assets/Services/firebase/firebase'
+
 
 
 
@@ -15,32 +15,14 @@ const ItemListContainer = () => {
     const  {brand}  = useParams()
 
     useEffect(() => {
-        if (!brand) {
-            getDocs(collection(db, 'Products')).then((querySnapshot) => {
-                const products = querySnapshot.docs.map(doc => {
-                    return { id: doc.id, ...doc.data() }
-                }) 
-                setListPhones(products)
-            }).catch((error) => {
-                console.log('Error searching intems', error)
-            }) 
-            return (() => {
-                setListPhones([])
-            })
-
-            } else {
-                getDocs(query(collection(db, 'Products'), where('brand', '==', brand))).then((querySnapshot) => {
-                const products = querySnapshot.docs.map(doc => {
-                return { id: doc.id, ...doc.data() }
-                }) 
-                setListPhones(products)
-            }).catch((error) => {
-                console.log('Error searching intems', error)
-            })
-            return (() => {
-                setListPhones([])
-            })         
-        } 
+        getProducts('brand', '==', brand).then(products => {
+            setListPhones(products)
+        }).catch((error) => {
+            console.log(error)
+        })
+        return (() => {
+            setListPhones([])
+        })
     }, [brand])
 
     if (listPhones.length === 0 ) {

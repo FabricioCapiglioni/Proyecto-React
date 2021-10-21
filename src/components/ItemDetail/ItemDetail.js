@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom';
 import { CartContext } from "../../context/CartContext";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import NotificationContext from '../../context/NotificationContext'
 
 const ItemDetail = ({item}) => {
 
     const [ count , setCount] = useState(0);
     const { addItem, cart, removeItem } = useContext(CartContext)
+    const { setNotification } = useContext(NotificationContext)
     
     if (!item){
         return (
@@ -20,6 +22,7 @@ const ItemDetail = ({item}) => {
     }
 
     const onAdd = () => {
+        setNotification("check", `Added to Cart, ${item.name} (${count} items) `, 2000)
         addItem(item, count)
         setCount(0)        
     }

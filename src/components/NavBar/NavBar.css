@@ -30,7 +30,7 @@
     text-decoration: none;
     margin: 0;
     list-style: none;
-    color: white;
+    color: white!important;
     font-style: italic;
     font-weight: 500;
 }

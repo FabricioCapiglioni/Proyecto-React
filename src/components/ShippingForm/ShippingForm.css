@@ -1,0 +1,9 @@
+.form {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+}
+
+.form imput {
+    text-align: start;
+}

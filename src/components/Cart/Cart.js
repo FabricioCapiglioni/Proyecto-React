@@ -1,81 +1,51 @@
 import './Cart.css'
 import CartList from '../CartList/CartList'
 import { useContext, useState, useEffect } from "react";
-import { collection, addDoc, getDoc, doc , Timestamp, writeBatch } from 'firebase/firestore'
-import {CartContext} from "../../context/CartContext";
-import {db} from '../../assets/Services/firebase/firebase'
+import { CartContext } from "../../context/CartContext";
+import NotificationContext from '../../context/NotificationContext'
+import { newOrder } from '../../assets/Services/firebase/firebase';
 import { Link } from 'react-router-dom';
-import { Confirmation, Processing, Error } from './AlertsBuy/AlertsBuy';
+
+
 
 const Cart = () => {
     const [total, setTotal] = useState(0)
-    const [checking, setChecking] = useState(false)
-    const [confirmed, setConfirmed] = useState(false)
-    const [error, setError] = useState(false)
-    const { cart, clearCart, getTotal, getTotalCount } = useContext(CartContext)
+    const { cart, clearCart, getTotal, buyer, setBuyer, getTotalCount} = useContext(CartContext)
+    const { setNotification } = useContext(NotificationContext)
 
     useEffect (() =>{
         setTotal(getTotal())
+
     },[getTotal, cart])
 
+    const buy = () => {
 
-    const buy= () => {
-        setChecking(true)
-
-        const newOrder = {
-            buyer: {
-                name: 'Fabricio',
-                phone: 3517320266,
-                email: 'fabriciokpi@gmail.com'
-            },
-            date: Timestamp.fromDate(new Date()), 
-            items: cart,
-            total: total
-        }
-        const batch = writeBatch(db)
-        const outOfStock = []
-
-        newOrder.items.forEach((prod, i) => {
-            getDoc(doc(db, 'Products', prod.id)).then(DocumentSnapshot => {
-                if(DocumentSnapshot.data().stock >= newOrder.items[i].quantity) {
-                    batch.update(doc(db, 'Products', DocumentSnapshot.id), {
-                        stock: DocumentSnapshot.data().stock - newOrder.items[i].quantity
-                    })
-                } else {
-                    outOfStock.push({...DocumentSnapshot.data(), id: DocumentSnapshot.id})
-                }
-                    
-            })
-        })
-
-        if(outOfStock.length === 0) {
-            addDoc(collection(db, 'orders'), newOrder).then(() => {
-                batch.commit().then(() => {
-                    setChecking(false) 
-                    setConfirmed(true) 
-                })
-            }).catch(() => {
-                setError(true)
+        if (buyer === undefined) {
+            setNotification("error", "You must complete the shipping form to complete the order", 10000)   
+        } else {
+            setNotification("spinner", "Processing Order", 2000) 
+            const order = {
+                buyer: buyer,
+                items: cart,
+                total: total
+            }
+            
+            newOrder(order).then( message => {
+                setNotification('check', message, 4000)
+            }).catch(error => {
+                setNotification('error', error, 2000)
             }).finally(() => {
-                setTimeout(() => {
-                    setConfirmed(false)
-                    setError(false)
-                }, 2000)
                 clearCart()
                 setTotal(0)
+                setBuyer()
             })
         }
-
     }
-
+    
     return (
             <div>
                 <h1>Cart</h1>       
                 <main>
-                {checking  && <Processing/> }
-                {(confirmed && !checking) && <Confirmation/>}
-                {(error && !confirmed && !checking) && <Error/>}
-
                 {cart.length !== 0 ? (
                     <> 
                         <CartList cart={cart} />
@@ -83,10 +53,26 @@ const Cart = () => {
                         <div className="checkOut">
                             <div className="add row col-sm-8">
                                 <div className="address col-sm-6">
-                                    <button id="btnFormAddress" type="button" className="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Shipping address
-                                    </button>
+
+                                    {buyer === undefined ?
+                                    <>
+                                    <Link  to="/shipping">
+                                        <button type="button" className="btn btn-primary">
+                                            Shipping Form
+                                        </button>
+                                    </Link>
+                                    </>
+                                    :
+                                    <>
+                                    <h4>Name: {buyer.name} </h4>
+                                    <h4>Address: {buyer.street} </h4>
+                                    <Link  to="/shipping">
+                                        <button type="button" className="btn btn-primary" onClick={() => setBuyer()}>
+                                            Edit
+                                        </button>
+                                    </Link>
+                                    </>
+                                    }
                                 </div>  
                                 <div className="total col-sm-6">
                                     <p> Total ({getTotalCount()} items) </p>
@@ -96,7 +82,9 @@ const Cart = () => {
                         </div>
                         <div className="buttonsCheckOut">
                             <button className="btn btn-danger me-md-4" type="button" onClick={() => clearCart()}>Clear</button>
+                            
                             <button className="btn btn-primary me-md-4" type="button" onClick={() => buy()}>Buy</button>
+                            
                         </div>
                         
                     </>

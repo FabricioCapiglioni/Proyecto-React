@@ -29,8 +29,7 @@ const NavBar = () => {
                         </ul>
                     </li>
                 </ul>
-                <NavLink to='/about' className="nav-link" href="#/">About Us</NavLink>
-                <NavLink to='/contact' className="nav-link " aria-current="page" href="dangerouslySetInnerHTML">Contact</NavLink>
+                <NavLink to='/contact' className="nav-link" aria-current="page" href="dangerouslySetInnerHTML">Contact Us</NavLink>
             </div>
             <CartWidget />
         </nav>

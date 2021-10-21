@@ -3,15 +3,34 @@
     justify-content: center;
 }
 
+.shippingNotice {
+    color: red;
+    
+}
+
 .add {
     border-top: 1px black solid;
     align-items: center;
     padding: 1rem;
 }
 
+.address h4 {
+    text-align: start;
+}
+
+.address a {
+    text-decoration: none;
+}
+
+
+.address button {
+    justify-content: start;
+    display: flex;
+}
+
 .total {
     font-size: 2rem;
-
+    text-align: end;
     padding-left: 1rem;
 }
 
