@@ -1,12 +1,10 @@
 import CartItem from '../CartItem/CartItem';
-import './CartList.css'
-
 
 
 const CartList = ({cart}) => {
 
     return (
-        <div className="productsContainer row">
+        <div className="productsContainer row" >
             {cart.map(product => (
                 <CartItem key={product.id} product={product} />
         )

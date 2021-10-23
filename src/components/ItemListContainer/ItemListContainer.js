@@ -8,7 +8,6 @@ import { getProducts } from '../../assets/Services/firebase/firebase'
 
 
 
-
 const ItemListContainer = () => {
 
     const [listPhones, setListPhones] = useState([])
@@ -40,12 +39,14 @@ const ItemListContainer = () => {
 
     return ( 
         <>
-            {!brand ? <Carousel/> : null}
-            <div className="container-fluid">
+        {!brand ? <Carousel/> : null}
+        <div className="container-fluid itemListContainer">
+            <div>
                 {brand ? <h1 className="title">{capt(brandTitle)}</h1> : <h1 className="title">Our Products</h1> } 
                 <ItemList item={listPhones} />
                 
             </div>
+        </div>
         </>
     )
 }

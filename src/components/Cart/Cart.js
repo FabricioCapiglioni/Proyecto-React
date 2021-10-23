@@ -21,7 +21,7 @@ const Cart = () => {
     const buy = () => {
 
         if (buyer === undefined) {
-            setNotification("error", "You must complete the shipping form to complete the order", 10000)   
+            setNotification("error", "You must complete the shipping form to complete the order", 5000)   
         } else {
             setNotification("spinner", "Processing Order", 2000) 
             const order = {
@@ -43,61 +43,58 @@ const Cart = () => {
     }
     
     return (
-            <div>
-                <h1>Cart</h1>       
-                <main>
-                {cart.length !== 0 ? (
-                    <> 
-                        <CartList cart={cart} />
-
-                        <div className="checkOut">
-                            <div className="add row col-sm-8">
-                                <div className="address col-sm-6">
-
-                                    {buyer === undefined ?
-                                    <>
-                                    <Link  to="/shipping">
-                                        <button type="button" className="btn btn-primary">
-                                            Shipping Form
-                                        </button>
-                                    </Link>
-                                    </>
-                                    :
-                                    <>
-                                    <h4>Name: {buyer.name} </h4>
-                                    <h4>Address: {buyer.street} </h4>
-                                    <Link  to="/shipping">
-                                        <button type="button" className="btn btn-primary" onClick={() => setBuyer()}>
-                                            Edit
-                                        </button>
-                                    </Link>
-                                    </>
-                                    }
-                                </div>  
-                                <div className="total col-sm-6">
-                                    <p> Total ({getTotalCount()} items) </p>
-                                    <p> $ {total} </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="buttonsCheckOut">
-                            <button className="btn btn-danger me-md-4" type="button" onClick={() => clearCart()}>Clear</button>
-                            
-                            <button className="btn btn-primary me-md-4" type="button" onClick={() => buy()}>Buy</button>
-                            
-                        </div>
-                        
-                    </>
-                    ) : 
-                    (
-                    <div className="tienda__cartNoElements">
-                        <p>Your cart is empty</p>
-                        <Link to="/">Back to main</Link>
+        <div className="cart container-fluid">
+            <h1>Cart</h1>       
+            {cart.length !== 0 ? (
+            <> 
+            <CartList cart={cart}  />
+            <div className="checkOut">
+                <div className="add row col-sm-8">
+                    <div className="address col-sm-6">
+                        {buyer === undefined ?
+                        <>
+                        <Link  to="/shipping">
+                            <button type="button" className="btn btn-primary">
+                                Shipping Form
+                            </button>
+                        </Link>
+                        </>
+                        :
+                        <>
+                        <h4>Name: {buyer.name} </h4>
+                        <h4>Address: {buyer.street} </h4>
+                        <Link  to="/shipping">
+                            <button type="button" className="btn btn-primary" onClick={() => setBuyer()}>
+                                Edit
+                            </button>
+                        </Link>
+                        </>
+                        }
+                    </div>  
+                    <div className="total col-sm-6">
+                        <p> Total ({getTotalCount()} items) </p>
+                        <p> $ {total} </p>
                     </div>
-                )}
-                </main>        
-                    
+                </div>
             </div>
+            <div className="container-fluid buttonsCheckOut">
+                <button className="btn btn-danger me-md-4" type="button" onClick={() => clearCart()}>Clear</button>
+                <button className="btn btn-primary me-md-4" type="button" onClick={() => buy()}>Buy</button>    
+            </div> 
+            </>
+            ) : 
+            (
+            <div>
+                <p>Your cart is empty</p>
+                <Link to="/">
+                    <button type="button" className="btn btn-primary">
+                        Back to home
+                    </button>
+                </Link>
+            </div>
+            )}  
+                
+        </div>
             
     )
 }

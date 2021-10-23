@@ -1,3 +1,7 @@
+.shippingForm {
+    min-height: 70vh;
+}
+
 .form {
     display: flex;
     justify-content: center;

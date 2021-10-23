@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
 
     return ( 
         <section className="container-fluid itemDetailContainer">
-            <div className="">
+            <div>
                 <h1 className="title">Product Detail</h1>
             </div>                
             <ItemDetail item={phoneDetail} />                 

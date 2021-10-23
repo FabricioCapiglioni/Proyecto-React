@@ -7,6 +7,7 @@ export const NotificationContextProvider = ({children}) => {
     const [type, setType] = useState('')
 
     const setNotification = ( type, message, sec ) => {
+        window.scrollTo(0, 0);
         setType(type)
         setMessage(message)        
         setTimeout(() => {
@@ -22,7 +23,6 @@ export const NotificationContextProvider = ({children}) => {
                    type
                },
                setNotification
-
             }}
         >
             {children}

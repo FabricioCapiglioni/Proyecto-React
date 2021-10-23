@@ -13,13 +13,12 @@ import {
 } from 'firebase/firestore'
 
 const firebaseConfig = {
-
-    apiKey: "AIzaSyA3KKwMwSPln-sGbv1IVpWDMX5n_i4TxcE",
-    authDomain: "coderphone-reactproyect.firebaseapp.com",
-    projectId: "coderphone-reactproyect",
-    storageBucket: "coderphone-reactproyect.appspot.com",
-    messagingSenderId: "900581026767",
-    appId: "1:900581026767:web:9ecb4e78266bb5634940ba"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 const app = firebase.initializeApp(firebaseConfig)

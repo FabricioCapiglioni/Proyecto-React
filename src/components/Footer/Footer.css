@@ -1,0 +1,23 @@
+.footer{ 
+    height: 20vh;
+    background-color:#3483fa;
+}
+
+.copyrights {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.github {
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a:hover {
+    color: white;
+}

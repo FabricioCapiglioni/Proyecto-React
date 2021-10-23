@@ -1,3 +1,8 @@
+.loading {
+    height: 100vh;
+}
+
+
 .loadTitle {
     font-size: 7rem;
 }

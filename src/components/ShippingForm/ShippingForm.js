@@ -51,7 +51,7 @@ const ShippingForm = () => {
 
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid shippingForm">
             <h1>Shipping Form</h1>
             <form className="form" onSubmit={handleContactForm}>
                 <div className="col-sm-4">
@@ -71,17 +71,18 @@ const ShippingForm = () => {
                         <textarea value={comment} onChange={({ target }) => setComment(target.value)} className="form-control" />
                         <label>Additional comment</label>
                     </div>
-                    <button type="button" className="btn btn-secondary" onClick={() => handleClearForm()} >Clear</button>
-                    
-                    {buyer === undefined ?
-                    <button type="submit" className="btn btn-primary" >Save</button>   
-                    :
-                    <Link  to="/cart">
-                        <button type="button" className="btn btn-primary">
-                            Back to cart
-                        </button>
-                    </Link>}      
-
+                    <div className="row">
+                        <button type="button" className="btn btn-secondary mb-3" onClick={() => handleClearForm()} >Clear</button>
+                        
+                        {buyer === undefined ?
+                        <button type="submit" className="btn btn-primary" >Save</button>   
+                        :
+                        <Link  to="/cart">
+                            <button type="button" className="btn btn-primary">
+                                Back to cart
+                            </button>
+                        </Link>}      
+                    </div>
                 </div>
             </form>                    
         </div>

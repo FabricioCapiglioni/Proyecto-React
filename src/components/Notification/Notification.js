@@ -20,10 +20,9 @@ export const Notification = () => {
     if(notification.message === '') {
         return null
     }
-
     
     return (
-        <div className="d-flex justify-content-center">
+        <div className=" alert d-flex justify-content-center">
             <div className="alert row col-sm-6 alert-primary alert-dismissible fade show" role="alert">
                 <h3> 
                     {(type === "spinner") ? spinner 

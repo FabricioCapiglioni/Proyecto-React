@@ -44,7 +44,7 @@ const Contact= () => {
     }
 
     return (
-      <div className="container-fluid">
+      <div className="container-fluid contact">
             <h1>Contact Us</h1>
             <form className="form" onSubmit={handleContactForm}>
                 <div className="col-sm-4">

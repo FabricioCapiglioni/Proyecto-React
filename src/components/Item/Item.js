@@ -16,8 +16,6 @@ const Item = ({productData}) => {
                     <h5 className="card-title"> {productData?.name} </h5>
                     <p className="price"> U$D {productData?.price} </p>
                     <NavLink to={`/item/${productData.id}`} type="button" className="btn btnDetalle btn-primary btn-lg">Details</NavLink>
-
-                    
                 </div>
             </div>
         </div>

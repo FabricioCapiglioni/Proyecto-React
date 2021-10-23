@@ -14,6 +14,7 @@ import Cart from './components/Cart/Cart.js'
 import Error404 from './components/Error404/Error404'
 import ShippingForm from './components/ShippingForm/ShippingForm'
 import Notification from './components/Notification/Notification';
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
 						<header className="App-header">
 							<NavBar />
 						</header>
-						<div>
-						<Notification />
+						<main>
+							<Notification />
 							<Switch>
 								<Route exact path='/contact' component={Contact} />
 								<Route exact path='/shipping' component={ShippingForm} />
@@ -37,7 +38,8 @@ function App() {
 								<Route exact path="/Cart" component={Cart} />
 								<Route path="*" component={Error404} />
 							</Switch>
-						</div>
+						</main>
+						<Footer className="App-footer" />
 					</BrowserRouter>
 				</CartContextProvider>
 			</NotificationContextProvider>

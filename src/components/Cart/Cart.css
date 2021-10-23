@@ -1,3 +1,7 @@
+.cart {
+    min-height: 70vh;
+}
+
 .checkOut {
     display: flex;
     justify-content: center;
@@ -24,7 +28,7 @@
 
 
 .address button {
-    justify-content: start;
+    justify-content: flex-start;
     display: flex;
 }
 
@@ -40,4 +44,5 @@
 
 .buttonsCheckOut{
     justify-content: right;
+    margin-bottom: 1rem;
 }
