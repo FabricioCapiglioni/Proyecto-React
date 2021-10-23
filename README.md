@@ -10,7 +10,7 @@
 
 ## Deply 📦
 
-El despliegue del sitio se realizó en [VERCEL](https://coder-phone.vercel.app/).
+El despliegue del sitio se realizó en VERCEL, [ir al sitio](https://coder-phone.vercel.app/).
 
 ## Configuración 🛠️
 
