@@ -1,5 +1,3 @@
-<hr>
-
 ## Construcción 🛠️
 
 * Desarrolladon con [Create React App](https://github.com/facebook/create-react-app).
@@ -7,13 +5,9 @@
 * Dependencias:
    * react-router-dom versión 5.2.0
 
-<hr>
-
 ## Deply 📦
 
 El despliegue del sitio se realizó en [VERCEL](https://coder-phone.vercel.app/).
-
-<hr>
 
 ## Configuración 🛠️
 
@@ -36,9 +30,6 @@ npm start
 ```
 
 Abra este link para verlo en el navegador [Link](http://localhost:3000)
-
-<hr>
-<br>
 
 ## Configurando Firebase
 * En la carpeta raíz, crea un acrchivo .env
@@ -65,15 +56,10 @@ REACT_APP_storageBucket="ingresaAquiTuStorageBucket.appspot.com"
 REACT_APP_messagingSenderId= "1232465132168465413"
 REACT_APP_appId= "1:213546321316:web:2abc3d65432135468ba"
 ```
-<br>
-
 #### Para mas información visita la siguiente documentación en [Firebase](https://firebase.google.com/docs/web/learn-more#config-object) 
 
-<hr>
-<br>
 
 ## Autor ✒️
-<br>
 
 * **Fabricio Capiglioni Dómene** - [
 FabricioCapiglioni](https://github.com/FabricioCapiglioni)
