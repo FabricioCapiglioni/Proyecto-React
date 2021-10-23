@@ -2,8 +2,11 @@
 
 * Desarrolladon con [Create React App](https://github.com/facebook/create-react-app).
 * El estilado de la web se realizó en CSS.
-* Dependencias:
-   * react-router-dom versión 5.2.0
+* Dependencias adicionales:
+   * react-router-dom versión 5.3.0
+   * bootstrap versión 5.1.0
+   * firebase versión 9.1.1
+   * fontawesome versión 5.15.4
 
 ## Deply 📦
 
