@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+<hr>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Construcción 🛠️
 
-## Available Scripts
+* Desarrolladon con [Create React App](https://github.com/facebook/create-react-app).
+* El estilado de la web se realizó en CSS.
+* Dependencias:
+   * react-router-dom versión 5.2.0
 
-In the project directory, you can run:
+<hr>
 
-### `npm start`
+## Deply 📦
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+El despliegue del sitio se realizó en [VERCEL](https://coder-phone.vercel.app/).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<hr>
 
-### `npm test`
+## Configuración 🛠️
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Primero deberás clonar el repositorio, desde la consola puedes ejecutar el siguiente comando:
 
-### `npm run build`
+```
+git clone https://github.com/FabricioCapiglioni/Proyecto-React.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Una vez clonado, debemos instalar las dependencias desde la carpeta raíz, ejecuta en consola el siguiente comando:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Puedes ejecutar la app en modo desarrollo, desde la carpeta raíz:
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Abra este link para verlo en el navegador [Link](http://localhost:3000)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<hr>
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Configurando Firebase
+* En la carpeta raíz, crea un acrchivo .env
+* Utilizando como base el archivo .env.example, copia su contenido y pegalo en el archivo .env que acabas de crear.
+* Ingresa a [firebase](https://firebase.google.com/) y haz `log-in` con una cuenta de google.
+* Ir a la consola de firebase y crear un nuevo proyecto: (ejemplo: "los-datos-y-vos").
+* Hacer clic en el icono "Añade firebase a tu aplicación web", verás un objeto con el siguiente formato: 
+```javascript
+var config = {
+   apiKey: "TuApiKey",
+   authDomain: "TuAuthDomain.firebaseapp.com",
+   projectId: "TuProjectId",
+   storageBucket: "TuStorageBucket",
+   messagingSenderId: "TuMessagingSenderId",
+   appId: "1:213546321316:web:2abc3d65432135468ab"
+  };
+```
+* Por último, reemplaza el value de cada key que te brinda Firebase, en el archivo .env que creaste.
+```
+REACT_APP_apiKey="ingresaAquiTuApiKey"
+REACT_APP_authDomain="ingresaAquiTuAuthDomain.firebaseapp.com"
+REACT_APP_projectId="ingresaAquiTuProjectId"
+REACT_APP_storageBucket="ingresaAquiTuStorageBucket.appspot.com"
+REACT_APP_messagingSenderId= "1232465132168465413"
+REACT_APP_appId= "1:213546321316:web:2abc3d65432135468ba"
+```
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Para mas información visita la siguiente documentación en [Firebase](https://firebase.google.com/docs/web/learn-more#config-object) 
 
-## Learn More
+<hr>
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Autor ✒️
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **Fabricio Capiglioni Dómene** - [
+FabricioCapiglioni](https://github.com/FabricioCapiglioni)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
