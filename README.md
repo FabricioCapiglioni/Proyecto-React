@@ -1,6 +1,6 @@
 ## Construcción 🛠️
 
-* Desarrolladon con [Create React App](https://github.com/facebook/create-react-app).
+* Desarrollado con [Create React App](https://github.com/facebook/create-react-app).
 * El estilado de la web se realizó en CSS.
 * Dependencias adicionales:
    * react-router-dom versión 5.3.0
