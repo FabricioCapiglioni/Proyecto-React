@@ -12,7 +12,9 @@
 
 El despliegue del sitio se realizó en VERCEL, [ir al sitio](https://coder-phone.vercel.app/).
 
-![Gif](https://s1.gifyu.com/images/CoderPhone-Firefox-Developer-Edition-2021-10-24-23-20-25.gif)
+<!-- ![Gif](https://s1.gifyu.com/images/CoderPhone-Firefox-Developer-Edition-2021-10-24-23-20-25.gif) -->
+
+<img src="https://s1.gifyu.com/images/CoderPhone-Firefox-Developer-Edition-2021-10-24-23-20-25.gif" alt="CoderPhone Firefox Developer Edition 2021 10 24 23 20 25" border="0">
 
 ## Configuración 🛠️
 
