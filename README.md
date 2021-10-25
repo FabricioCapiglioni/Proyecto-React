@@ -4,6 +4,7 @@
 * El estilado de la web se realizó en CSS.
 * Dependencias adicionales:
    * react-router-dom versión 5.3.0
+   * react-bootstrap 2.0.0
    * bootstrap versión 5.1.0
    * firebase versión 9.1.1
    * fontawesome versión 5.15.4
