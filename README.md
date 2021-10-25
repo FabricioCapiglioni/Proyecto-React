@@ -1,6 +1,6 @@
 ## Construcción 🛠️
 
-* Desarrolladon con [Create React App](https://github.com/facebook/create-react-app).
+* Desarrollado con [Create React App](https://github.com/facebook/create-react-app).
 * El estilado de la web se realizó en CSS.
 * Dependencias adicionales:
    * react-router-dom versión 5.3.0
@@ -10,7 +10,7 @@
 
 ## Deply 📦
 
-El despliegue del sitio se realizó en [VERCEL](https://coder-phone.vercel.app/).
+El despliegue del sitio se realizó en VERCEL, [ir al sitio](https://coder-phone.vercel.app/).
 
 ![Gif](https://s1.gifyu.com/images/CoderPhone-Firefox-Developer-Edition-2021-10-24-23-20-25.gif)
 
