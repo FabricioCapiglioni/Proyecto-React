@@ -43,9 +43,22 @@ export const getProducts = (key, operator, value) => {
             })
             resolve(products)
         }).catch((error) => {
-            reject(console.log('Error searching intems', error))
+            reject('Error searching intems', error)
         })
     })
+}
+
+export const getCategories = () => {
+    return new Promise((resolve, reject) => {
+        getDocs(collection(db, 'categories')).then((querySnapshot) => {
+            const categories = querySnapshot.docs.map(doc => {
+                return { id: doc.id, ...doc.data() }
+            }) 
+            resolve(categories)
+        }).catch((error) => {
+            reject(`Error searching category: ${error}`)
+        })
+    }) 
 }
 
 

@@ -11,7 +11,7 @@ import NotificationContext from '../../context/NotificationContext'
 
 const ItemDetail = ({item}) => {
 
-    const [ count , setCount] = useState(0);
+    const [ count , setCount] = useState(1);
     const { addItem, cart, removeItem } = useContext(CartContext)
     const { setNotification } = useContext(NotificationContext)
     
@@ -41,10 +41,10 @@ const ItemDetail = ({item}) => {
     return (
 
         <div className="container-fluid row ">
-            <div className="col-sm-6">
+            <div className="col-sm-12 col-xl-6">
                 <img className='imgProduct' src={item.pictureUrl} alt="..." ></img>
             </div>
-            <div className="col-sm-6 itemDetail">
+            <div className="col-sm-12 col-xl-6 itemDetail">
                 <h2 className="brandDetail"> {capt(brandTitle)} </h2>
                 <h2 className="nameDetail"> {item.name} </h2>                
                 <p className="descriptionDetail"> <b>Description:</b> {item.description} </p>
@@ -54,7 +54,9 @@ const ItemDetail = ({item}) => {
                    { !isInCart(item.id) ? 
                     <>
                     <ItemCount count={count} setCount={setCount} item={item} />
-                    <button type="button" className="col-sm-2 btnAdd btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
+                    <div className="col-sm-6 btnAdd">
+                        <button type="button" className="col-sm-6 btn btn-secondary" onClick={() => onAdd()}>Add to cart</button>
+                    </div>
                     </>
                     :
                     <>                    
@@ -63,7 +65,7 @@ const ItemDetail = ({item}) => {
                     </>
                     }
                 </div>
-                <div className="buttons container-fluid row">    
+                <div className="buttons row">    
                     <Link  className="col-sm-5" to={`/`}>                      
                         <button type="button"className="col-sm-12 btn btn-primary" >
                             More products

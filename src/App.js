@@ -3,7 +3,7 @@ import { CartContextProvider } from './context/CartContext'
 import { NotificationContextProvider } from './context/NotificationContext'
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
@@ -36,7 +36,7 @@ function App() {
 								<Route exact path="/category/:brand" component={ItemListContainer} />
 								<Route exact path="/item/:id" component={ItemDetailContainer} />
 								<Route exact path="/Cart" component={Cart} />
-								<Route path="*" component={Error404} />
+								<Route path="/*" component={Error404} />
 							</Switch>
 						</main>
 						<Footer className="App-footer" />

@@ -21,9 +21,9 @@ const Cart = () => {
     const buy = () => {
 
         if (buyer === undefined) {
-            setNotification("error", "You must complete the shipping form to complete the order", 5000)   
+            setNotification("error", "You must complete the shipping form to complete the order", 2000)   
         } else {
-            setNotification("spinner", "Processing Order", 2000) 
+            setNotification("spinner", "Processing Order", 5000) 
             const order = {
                 buyer: buyer,
                 items: cart,
@@ -31,7 +31,7 @@ const Cart = () => {
             }
             
             newOrder(order).then( message => {
-                setNotification('check', message, 4000)
+                setNotification('check', message, 3000)
             }).catch(error => {
                 setNotification('error', error, 2000)
             }).finally(() => {

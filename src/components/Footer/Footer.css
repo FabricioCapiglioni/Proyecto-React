@@ -1,6 +1,6 @@
 .footer{ 
-    height: 20vh;
-    background-color:#3483fa;
+    min-height: 20vh;
+    background-color:#033889;
 }
 
 .copyrights {

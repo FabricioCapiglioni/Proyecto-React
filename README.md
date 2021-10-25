@@ -12,6 +12,8 @@
 
 El despliegue del sitio se realizó en [VERCEL](https://coder-phone.vercel.app/).
 
+![Gif](https://s1.gifyu.com/images/CoderPhone-Firefox-Developer-Edition-2021-10-24-23-20-25.gif)
+
 ## Configuración 🛠️
 
 Primero deberás clonar el repositorio, desde la consola puedes ejecutar el siguiente comando:

@@ -30,10 +30,8 @@ const ItemListContainer = () => {
         )
     }
 
-    const brandTitle = brand;
-
-    function capt(brandTitle) {
-    return brandTitle.charAt(0).toUpperCase() + brandTitle.slice(1);
+    function capt() {
+    return brand.charAt(0).toUpperCase() + brand.slice(1);
     }
 
 
@@ -42,7 +40,7 @@ const ItemListContainer = () => {
         {!brand ? <Carousel/> : null}
         <div className="container-fluid itemListContainer">
             <div>
-                {brand ? <h1 className="title">{capt(brandTitle)}</h1> : <h1 className="title">Our Products</h1> } 
+                {brand ? <h1 className="title">{capt()}</h1> : <h1 className="title">Our Products</h1> } 
                 <ItemList item={listPhones} />
                 
             </div>

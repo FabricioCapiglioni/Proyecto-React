@@ -1,5 +1,5 @@
 .imgProduct {
-    max-width: 800px;
+    width: 100%;
 }
 
 .itemDetail{
@@ -28,8 +28,9 @@
 }
 
 .btnAdd {
+    display: flex;
     font-size: 1.2rem;
-    justify-content: left;
+    justify-content: center;
 }
 
 .isInCart{
@@ -52,3 +53,4 @@
     background-color: #3483fa;
     border-color: #3483fa;;
 }
+
