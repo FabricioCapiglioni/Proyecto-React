@@ -9,7 +9,7 @@
    * firebase versión 9.1.1
    * fontawesome versión 5.15.4
 
-## Deply 📦
+## Deploy 📦
 
 El despliegue del sitio se realizó en VERCEL, [ir al sitio](https://coder-phone.vercel.app/).
 
